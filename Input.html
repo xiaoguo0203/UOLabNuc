@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function checkUsername() {
+				var uname = document.getElementById("username").value;
+				var unameTip = document.getElementById("usernameTip");
+				var reg = /^[\u4e00-\u9fa5]{2,4}$/;
+				if(!reg.test(uname)) {
+					unameTip.innerHTML = "用户名不合法！";
+					unameTip.style = "color:red"
+				} else {
+					unameTip.innerHTML = "";
+				}
+			}
+		</script>
+		<script>
+			function checkjishu() {
+				var uname = document.getElementById("jishu").value;
+				var unameTip = document.getElementById("jishuTip");
+				var reg = /^[\u4E00-\u9FA5A-Za-z]{1,50}$/;
+				if(!reg.test(uname)) {
+					unameTip.innerHTML = "技术专题不合法！";
+					unameTip.style = "color:red"
+				} else {
+					unameTip.innerHTML = "";
+				}
+			}
+		</script>
+		<script>
+			function checkshuoming() {
+				var uname = document.getElementById("qunti").value;
+				var unameTip = document.getElementById("smTip");
+				var reg = /^[\u4e00-\u9fa5]{0,}$/;
+				if(!reg.test(uname)) {
+					unameTip.innerHTML = "群体说明不合法！";
+					unameTip.style = "color:red"
+				} else {
+					unameTip.innerHTML = "";
+				}
+			}
+		</script>
+		<style>
+		#riqi{
+			margin-left:20px;
+		}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">录入公开课</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="formbody">
+
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li><label>日期<b>*</b></label>
+						<div class="vocation">
+							<select class="select3">
+								<option>2018</option>
+								<option>2019</option>
+								<option>2020</option>
+								<option>2021</option>
+							</select>
+						</div>
+						<label id="riqi">年</label>
+									
+						<div class="vocation">
+							<select class="select3">
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+								<option>04</option>
+								<option>05</option>
+								<option>06</option>
+								<option>07</option>
+								<option>08</option>
+								<option>09</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+						</div>
+						<label id="riqi">月</label>
+					</li>
+					<li>
+						<label>主讲人<b>*</b></label>
+						<input onblur="checkUsername()" id="username" placeholder="汉字2-4个" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="usernameTip"></i>
+					</li>
+					<li>
+						<label>技术专题<b>*</b></label>
+						<input id="jishu" onblur="checkjishu()" placeholder="字母和汉字组合，1-50 个字符" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="jishuTip"></i>
+					</li>
+					<li>
+						<label>组织人<b>*</b></label>
+						<input placeholder="学生和 UOLab 的老师，可能多个人" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>日期<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>地点<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>群体说明<b>*</b></label>
+						<input id="qunti" onblur="checkshuoming()" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="smTip"></i>
+					</li>
+						<li>
+						<label>方式<b>*</b></label><cite>
+       	<input name="sex" type="radio" value="" checked="checked" />线下&nbsp;&nbsp;&nbsp;&nbsp;
+       	<input name="sex" type="radio" value="" />直播&nbsp;&nbsp;&nbsp;&nbsp;
+       	<input name="sex" type="radio" value="" />录播</cite></li>
+					<li>
+						<label>创新学分值<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>参加人数<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li><label>备注<b>*</b></label>
+
+						<textarea id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="录入" /></li>
+				</ul>
+
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			$("#usual1 ul").idTabs();
+		</script>
+
+		<script type="text/javascript">
+			$('.tablelist tbody tr:odd').addClass('odd');
+		</script>
+
+		</div>
+
+	</body>
+
+</html>
